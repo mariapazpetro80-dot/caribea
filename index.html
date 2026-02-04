@@ -1,0 +1,1826 @@
+<!doctype html>
+<html lang="es-CO">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="CaribeAirCol: blog informativo sobre los mejores sitios de Barranquilla. Guías, recomendaciones y contexto cultural para planear tu visita." />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#5b2cff" />
+
+  <title>CaribeAirCol | Blog informativo: mejores sitios de Barranquilla</title>
+
+  <!-- Tipografías: base legible + cursiva elegante -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      /* Paleta inspirada en el Carnaval de Barranquilla (vibrante pero profesional) */
+      --c-purple:#5b2cff;
+      --c-fuchsia:#e100ff;
+      --c-yellow:#ffd400;
+      --c-cyan:#00c2ff;
+      --c-red:#ff2d2d;
+
+      --bg:#0b0c10;
+      --panel:#10121a;
+      --panel2:#0f1220;
+      --text:#e9ecf5;
+      --muted:#b7bfd6;
+      --line:rgba(255,255,255,.10);
+
+      --shadow: 0 18px 50px rgba(0,0,0,.45);
+      --shadow2: 0 10px 28px rgba(0,0,0,.35);
+
+      --radius: 18px;
+      --radius2: 22px;
+      --max: 1180px;
+
+      --serif: "Playfair Display", serif;
+      --sans: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: var(--sans);
+      background: radial-gradient(1200px 900px at 15% -10%, rgba(225,0,255,.18), transparent 60%),
+                  radial-gradient(900px 700px at 90% 0%, rgba(0,194,255,.16), transparent 55%),
+                  radial-gradient(1000px 800px at 50% 120%, rgba(255,212,0,.10), transparent 60%),
+                  var(--bg);
+      color: var(--text);
+      line-height:1.5;
+      overflow-x:hidden;
+    }
+
+    a{ color:inherit; text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+    img{ max-width:100%; display:block; }
+    button{ font-family:inherit; }
+
+    /* Contenedor principal */
+    .wrap{ width:min(var(--max), calc(100% - 40px)); margin:0 auto; }
+
+    /* Barra superior */
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(to bottom, rgba(11,12,16,.78), rgba(11,12,16,.45));
+      border-bottom:1px solid var(--line);
+    }
+    .topbar__inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding:14px 0;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width: 180px;
+    }
+    .mark{
+      width:40px;height:40px;border-radius: 12px;
+      background: conic-gradient(from 210deg,
+        var(--c-purple), var(--c-fuchsia), var(--c-yellow), var(--c-cyan), var(--c-red), var(--c-purple)
+      );
+      box-shadow: 0 10px 26px rgba(0,0,0,.45);
+      border:1px solid rgba(255,255,255,.18);
+    }
+    .brand__text{
+      display:flex;
+      flex-direction:column;
+      line-height:1.05;
+    }
+    .brand__name{
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 700;
+      letter-spacing:.2px;
+      font-size: 18px;
+    }
+    .brand__tag{
+      color:var(--muted);
+      font-size:12px;
+      margin-top:2px;
+      letter-spacing:.3px;
+    }
+
+    .nav{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .nav a{
+      font-size:13px;
+      color:rgba(233,236,245,.86);
+      padding:10px 10px;
+      border-radius: 12px;
+      border:1px solid transparent;
+    }
+    .nav a:hover{
+      text-decoration:none;
+      border-color: rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+    }
+
+    .nav__actions{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      margin-left: 4px;
+    }
+    .pill{
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      padding:10px 12px;
+      border-radius: 999px;
+      font-size:13px;
+      cursor:pointer;
+      transition: transform .12s ease, background .2s ease;
+    }
+    .pill:hover{ transform: translateY(-1px); background: rgba(255,255,255,.09); }
+    .pill:active{ transform: translateY(0px); }
+
+    /* Hero */
+    .hero{
+      padding: 26px 0 18px;
+    }
+    .hero__grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    .hero__card{
+      border-radius: var(--radius2);
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+      background:
+        radial-gradient(800px 360px at 10% 0%, rgba(91,44,255,.22), transparent 60%),
+        radial-gradient(800px 360px at 90% 10%, rgba(0,194,255,.16), transparent 60%),
+        linear-gradient(180deg, rgba(16,18,26,.92), rgba(16,18,26,.72));
+    }
+    .hero__card::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background: linear-gradient(130deg,
+        rgba(225,0,255,.22),
+        rgba(255,212,0,.14),
+        rgba(0,194,255,.18),
+        rgba(255,45,45,.12)
+      );
+      filter: blur(18px);
+      opacity:.55;
+      z-index:0;
+    }
+    .hero__content{
+      position:relative;
+      z-index:1;
+      padding: 26px;
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      min-height: 340px;
+    }
+
+    .kicker{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      font-size:12px;
+      color: rgba(233,236,245,.86);
+      letter-spacing:.5px;
+      text-transform: uppercase;
+    }
+    .kdot{
+      width:10px;height:10px;border-radius: 99px;
+      background: linear-gradient(180deg, var(--c-yellow), var(--c-fuchsia));
+      box-shadow: 0 8px 16px rgba(255,212,0,.12);
+    }
+    h1{
+      margin:0;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(28px, 3.2vw, 44px);
+      line-height: 1.05;
+      letter-spacing: .2px;
+    }
+    .hero p{
+      margin:0;
+      color: rgba(233,236,245,.86);
+      font-size: 15px;
+      max-width: 64ch;
+    }
+    .hero__cta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top: 6px;
+    }
+    .btn{
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      padding: 12px 14px;
+      border-radius: 14px;
+      cursor:pointer;
+      font-size: 14px;
+      transition: transform .12s ease, background .2s ease, border-color .2s ease;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.10);
+      border-color: rgba(255,255,255,.22);
+      text-decoration:none;
+    }
+    .btn--primary{
+      border:1px solid rgba(255,255,255,.22);
+      background: linear-gradient(135deg, rgba(91,44,255,.35), rgba(0,194,255,.22));
+    }
+    .btn--ghost{
+      background: transparent;
+      border-color: rgba(255,255,255,.14);
+    }
+
+    .hero__aside{
+      display:grid;
+      grid-template-rows: 1fr 1fr;
+      gap:18px;
+    }
+
+    /* Tarjetas con “recuadros” */
+    .panel{
+      border-radius: var(--radius2);
+      border:1px solid rgba(255,255,255,.12);
+      background: linear-gradient(180deg, rgba(16,18,26,.88), rgba(16,18,26,.66));
+      box-shadow: var(--shadow2);
+      overflow:hidden;
+      position:relative;
+    }
+    .panel__inner{ padding:18px; position:relative; }
+    .panel__title{
+      margin:0 0 8px;
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing:.2px;
+    }
+    .panel__meta{
+      font-size:12px;
+      color: var(--muted);
+      margin:0 0 12px;
+    }
+    .panel__text{
+      margin:0;
+      color: rgba(233,236,245,.86);
+      font-size: 13px;
+    }
+
+    .badgebar{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top: 12px;
+    }
+    .badge{
+      font-size:12px;
+      color: rgba(233,236,245,.9);
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      padding:8px 10px;
+      border-radius:999px;
+      white-space:nowrap;
+    }
+
+    /* Secciones */
+    section{ padding: 22px 0; }
+    .section__head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom: 14px;
+    }
+    .h2{
+      margin:0;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 22px;
+      letter-spacing:.2px;
+    }
+    .sub{
+      margin:0;
+      color: var(--muted);
+      font-size: 13px;
+      max-width: 70ch;
+    }
+
+    .toolbar{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:flex-end;
+    }
+    .input{
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      padding: 11px 12px;
+      border-radius: 14px;
+      font-size: 14px;
+      outline:none;
+      min-width: 220px;
+    }
+    .select{
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      padding: 11px 12px;
+      border-radius: 14px;
+      font-size: 14px;
+      outline:none;
+      cursor:pointer;
+    }
+
+    /* Grid de cards */
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
+    .card{
+      grid-column: span 4;
+      border-radius: var(--radius2);
+      border:1px solid rgba(255,255,255,.12);
+      background: linear-gradient(180deg, rgba(16,18,26,.86), rgba(16,18,26,.62));
+      overflow:hidden;
+      box-shadow: var(--shadow2);
+      display:flex;
+      flex-direction:column;
+      min-height: 420px;
+      position:relative;
+      transition: transform .12s ease, border-color .2s ease, background .2s ease;
+    }
+    .card:hover{
+      transform: translateY(-2px);
+      border-color: rgba(255,255,255,.20);
+      background: linear-gradient(180deg, rgba(16,18,26,.92), rgba(16,18,26,.68));
+    }
+    .card__media{
+      position:relative;
+      height: 180px;
+      background: rgba(255,255,255,.04);
+    }
+    .card__media img{
+      width:100%;
+      height:100%;
+      object-fit: cover;
+      filter: saturate(1.05) contrast(1.05);
+      transform: scale(1.02);
+    }
+    .card__label{
+      position:absolute;
+      left:12px;
+      bottom:12px;
+      padding:8px 10px;
+      font-size:12px;
+      border-radius: 999px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(11,12,16,.55);
+      backdrop-filter: blur(10px);
+      color: rgba(233,236,245,.92);
+    }
+    .card__body{
+      padding: 16px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      flex:1;
+    }
+    .card__title{
+      margin:0;
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 700;
+      font-size: 18px;
+      line-height:1.15;
+    }
+    .card__desc{
+      margin:0;
+      color: rgba(233,236,245,.86);
+      font-size: 13px;
+    }
+    .card__tips{
+      margin:0;
+      padding-left: 18px;
+      color: rgba(233,236,245,.86);
+      font-size: 13px;
+    }
+    .card__tips li{ margin:6px 0; }
+    .card__foot{
+      padding: 14px 16px 16px;
+      border-top:1px solid rgba(255,255,255,.10);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+    }
+    .chipset{
+      display:flex; gap:8px; flex-wrap:wrap;
+    }
+    .chip{
+      font-size:12px;
+      color: rgba(233,236,245,.9);
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      padding:7px 10px;
+      border-radius:999px;
+    }
+    .read{
+      font-size:13px;
+      color: rgba(233,236,245,.92);
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      padding:9px 11px;
+      border-radius: 12px;
+      cursor:pointer;
+    }
+    .read:hover{ background: rgba(255,255,255,.10); text-decoration:none; }
+
+    /* Recuadros informativos */
+    .tiles{
+      display:grid;
+      grid-template-columns: repeat(12,1fr);
+      gap: 14px;
+    }
+    .tile{
+      grid-column: span 3;
+      border-radius: var(--radius2);
+      border:1px solid rgba(255,255,255,.12);
+      background: linear-gradient(180deg, rgba(16,18,26,.86), rgba(16,18,26,.62));
+      box-shadow: var(--shadow2);
+      padding: 16px;
+      position:relative;
+      overflow:hidden;
+    }
+    .tile::after{
+      content:"";
+      position:absolute;
+      inset:-40px -40px auto auto;
+      width:160px;height:160px;
+      background: radial-gradient(circle at 30% 30%, rgba(255,212,0,.20), transparent 60%),
+                  radial-gradient(circle at 70% 60%, rgba(225,0,255,.18), transparent 60%);
+      filter: blur(1px);
+      opacity:.9;
+      transform: rotate(18deg);
+    }
+    .tile__k{
+      font-size:12px;
+      color: var(--muted);
+      margin:0 0 6px;
+      letter-spacing:.4px;
+      text-transform: uppercase;
+    }
+    .tile__v{
+      margin:0;
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 700;
+      font-size: 18px;
+      position:relative;
+      z-index:1;
+    }
+    .tile__p{
+      margin:8px 0 0;
+      color: rgba(233,236,245,.86);
+      font-size: 13px;
+      position:relative;
+      z-index:1;
+    }
+
+    /* Modal (lectura) */
+    .modal{
+      position:fixed;
+      inset:0;
+      background: rgba(0,0,0,.60);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding: 20px;
+      z-index: 80;
+    }
+    .modal[aria-hidden="false"]{ display:flex; }
+    .modal__box{
+      width:min(860px, 100%);
+      border-radius: 22px;
+      border:1px solid rgba(255,255,255,.14);
+      background: linear-gradient(180deg, rgba(16,18,26,.96), rgba(16,18,26,.84));
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .modal__top{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:10px;
+      padding: 16px 16px 10px;
+      border-bottom:1px solid rgba(255,255,255,.10);
+    }
+    .modal__title{
+      margin:0;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 20px;
+      letter-spacing:.2px;
+    }
+    .modal__close{
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      padding:10px 12px;
+      border-radius: 14px;
+      cursor:pointer;
+    }
+    .modal__content{
+      padding: 14px 16px 18px;
+      color: rgba(233,236,245,.88);
+    }
+    .modal__content p{ margin: 10px 0; }
+    .modal__content h3{
+      margin: 14px 0 8px;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 16px;
+    }
+
+    /* Footer y políticas */
+    footer{
+      padding: 18px 0 40px;
+      border-top: 1px solid rgba(255,255,255,.10);
+      background: linear-gradient(to top, rgba(16,18,26,.75), transparent);
+    }
+    .footer__grid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 14px;
+      align-items:start;
+    }
+    .legal{
+      border-radius: var(--radius2);
+      border:1px solid rgba(255,255,255,.12);
+      background: linear-gradient(180deg, rgba(16,18,26,.86), rgba(16,18,26,.62));
+      box-shadow: var(--shadow2);
+      padding: 16px;
+    }
+    .legal h3{
+      margin: 0 0 8px;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 18px;
+    }
+    .legal p, .legal li{
+      color: rgba(233,236,245,.86);
+      font-size: 13px;
+    }
+    .legal ul{ margin: 10px 0 0; padding-left: 18px; }
+    .legal a{ text-decoration: underline; text-decoration-color: rgba(255,255,255,.25); }
+    .fineprint{
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* Cookie banner */
+    .cookie{
+      position:fixed;
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+      z-index: 90;
+      display:none;
+    }
+    .cookie__box{
+      width:min(var(--max), 100%);
+      margin: 0 auto;
+      border-radius: 22px;
+      border:1px solid rgba(255,255,255,.14);
+      background: linear-gradient(180deg, rgba(16,18,26,.96), rgba(16,18,26,.84));
+      box-shadow: var(--shadow);
+      padding: 14px 14px;
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap: 12px;
+    }
+    .cookie__text{
+      margin:0;
+      color: rgba(233,236,245,.86);
+      font-size: 13px;
+      max-width: 86ch;
+    }
+    .cookie__actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    /* Utilidades */
+    .sr-only{
+      position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+      overflow:hidden; clip:rect(0,0,0,0); border:0;
+    }
+    .muted{ color: var(--muted); }
+    .sep{ height:1px; background: rgba(255,255,255,.10); margin: 12px 0; }
+
+    /* Responsivo */
+    @media (max-width: 980px){
+      .hero__grid{ grid-template-columns: 1fr; }
+      .hero__aside{ grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+      .card{ grid-column: span 6; }
+      .tile{ grid-column: span 6; }
+      .footer__grid{ grid-template-columns: 1fr; }
+      .nav{ display:none; } /* Simple: menú colapsa en móvil, usamos botón */
+      .topbar__inner{ justify-content:space-between; }
+    }
+    @media (max-width: 640px){
+      .hero__aside{ grid-template-columns: 1fr; }
+      .card{ grid-column: span 12; }
+      .tile{ grid-column: span 12; }
+      .input{ min-width: 100%; }
+      .toolbar{ width:100%; justify-content:stretch; }
+      .select{ width:100%; }
+    }
+
+    /* Preferencias de movimiento */
+    @media (prefers-reduced-motion: reduce){
+      *{ scroll-behavior:auto !important; transition:none !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar" role="banner">
+    <div class="wrap topbar__inner">
+      <a class="brand" href="#inicio" aria-label="Ir al inicio de CaribeAirCol">
+        <div class="mark" aria-hidden="true"></div>
+        <div class="brand__text">
+          <div class="brand__name">CaribeAirCol</div>
+          <div class="brand__tag">Blog informativo sobre los mejores sitios de Barranquilla</div>
+        </div>
+      </a>
+
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="#destacados">Destacados</a>
+        <a href="#colecciones">Colecciones</a>
+        <a href="#metodo">Metodología</a>
+        <a href="#preguntas">Preguntas</a>
+        <a href="#politicas">Políticas</a>
+        <a href="#contacto">Contacto</a>
+        <div class="nav__actions">
+          <button class="pill" id="btnScrollTop" type="button" title="Subir al inicio">Inicio</button>
+          <button class="pill" id="btnMenu" type="button" aria-haspopup="dialog" aria-controls="mobileMenu">Menú</button>
+        </div>
+      </nav>
+
+      <!-- En móvil mostramos los botones directamente -->
+      <div class="nav__actions" style="display:flex; gap:10px;">
+        <button class="pill" id="btnScrollTop2" type="button" title="Subir al inicio">Inicio</button>
+        <button class="pill" id="btnMenu2" type="button" aria-haspopup="dialog" aria-controls="mobileMenu">Menú</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="inicio" class="wrap" role="main">
+    <!-- HERO -->
+    <section class="hero" aria-label="Presentación">
+      <div class="hero__grid">
+        <article class="hero__card">
+          <div class="hero__content">
+            <div class="kicker"><span class="kdot" aria-hidden="true"></span>Guías útiles, contexto local y recomendaciones claras</div>
+            <h1>Los mejores sitios de Barranquilla, explicados con criterio editorial y enfoque informativo.</h1>
+            <p>
+              CaribeAirCol es un blog independiente: recopilamos lugares emblemáticos, planes culturales, rutas gastronómicas y espacios al aire libre
+              con descripciones honestas y prácticas. Sin promesas engañosas ni afiliaciones ocultas.
+            </p>
+            <div class="hero__cta" role="group" aria-label="Acciones principales">
+              <a class="btn btn--primary" href="#destacados">Explorar lugares destacados</a>
+              <a class="btn btn--ghost" href="#metodo">Cómo seleccionamos sitios</a>
+              <button class="btn" id="btnAbrirGuia" type="button">Leer guía rápida</button>
+            </div>
+
+            <div class="badgebar" aria-label="Enfoques del contenido">
+              <span class="badge">Informativo</span>
+              <span class="badge">Actualizable</span>
+              <span class="badge">Pensado para lectura móvil</span>
+              <span class="badge">Transparencia editorial</span>
+            </div>
+          </div>
+        </article>
+
+        <aside class="hero__aside" aria-label="Resumen y herramientas">
+          <div class="panel">
+            <div class="panel__inner">
+              <h2 class="panel__title">Colecciones recomendadas</h2>
+              <p class="panel__meta">Rutas temáticas para decidir más rápido</p>
+              <p class="panel__text">
+                Filtra por tipo de plan, nivel de tiempo y preferencia. Las fichas incluyen contexto cultural, sugerencias y pautas de respeto por el entorno.
+              </p>
+              <div class="badgebar">
+                <span class="badge">Cultura</span>
+                <span class="badge">Naturaleza</span>
+                <span class="badge">Gastronomía</span>
+                <span class="badge">Familia</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel__inner">
+              <h2 class="panel__title">Nota de independencia</h2>
+              <p class="panel__meta">Información, no ventas</p>
+              <p class="panel__text">
+                Este sitio no promete resultados ni “experiencias garantizadas”. Las recomendaciones pueden variar según clima, horarios y eventos.
+                Verifica siempre fuentes oficiales y condiciones locales antes de visitar.
+              </p>
+              <div class="sep"></div>
+              <p class="panel__text"><span class="muted">Última revisión editorial:</span> <span id="lastUpdated">—</span></p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- TILES -->
+    <section aria-label="Indicadores editoriales">
+      <div class="tiles">
+        <div class="tile">
+          <p class="tile__k">Enfoque</p>
+          <p class="tile__v">Lectura clara</p>
+          <p class="tile__p">Descripciones prácticas, lenguaje directo y estructura por recuadros para escaneo rápido.</p>
+        </div>
+        <div class="tile">
+          <p class="tile__k">Criterio</p>
+          <p class="tile__v">Contexto local</p>
+          <p class="tile__p">Priorizamos historia, cultura y hábitos barranquilleros para orientar decisiones informadas.</p>
+        </div>
+        <div class="tile">
+          <p class="tile__k">Calidad</p>
+          <p class="tile__v">Fuentes verificables</p>
+          <p class="tile__p">Promovemos contrastar horarios y eventos en canales oficiales cuando sea necesario.</p>
+        </div>
+        <div class="tile">
+          <p class="tile__k">Privacidad</p>
+          <p class="tile__v">Consentimiento</p>
+          <p class="tile__p">No pedimos datos personales para leer. Si habilitas cookies, te lo indicamos con claridad.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DESTACADOS -->
+    <section id="destacados" aria-label="Lugares destacados">
+      <div class="section__head">
+        <div>
+          <h2 class="h2">Destacados para una primera visita</h2>
+          <p class="sub">Selección curada de espacios representativos. Usa el buscador y el filtro para adaptar la lectura a tu interés.</p>
+        </div>
+        <div class="toolbar" aria-label="Herramientas de filtrado">
+          <label class="sr-only" for="q">Buscar</label>
+          <input id="q" class="input" type="search" placeholder="Buscar: malecón, museo, parque, gastronomía" autocomplete="off" />
+          <label class="sr-only" for="cat">Categoría</label>
+          <select id="cat" class="select">
+            <option value="todas">Todas</option>
+            <option value="cultura">Cultura</option>
+            <option value="naturaleza">Naturaleza</option>
+            <option value="gastronomia">Gastronomía</option>
+            <option value="iconico">Icónico</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="grid" id="cards">
+        <!-- Card 1 -->
+        <article class="card" data-cat="iconico" data-title="Gran Malecón del Río">
+          <div class="card__media">
+            <img
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1400&q=70"
+              alt="Vista urbana junto al río, ideal para paseo y fotografía"
+            />
+            <span class="card__label">Icónico</span>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Gran Malecón del Río</h3>
+            <p class="card__desc">
+              Un punto de encuentro para caminar, descansar y observar el paisaje ribereño. Funciona muy bien para planes de tarde:
+              el entorno es amplio y permite recorrerlo por tramos sin prisa.
+            </p>
+            <ul class="card__tips">
+              <li>Ve con tiempo: la experiencia mejora cuando eliges un tramo y lo recorres completo.</li>
+              <li>Si vas en grupo, define un punto de encuentro para evitar contratiempos.</li>
+              <li>Para fotos, busca luz suave al final de la tarde.</li>
+            </ul>
+          </div>
+          <div class="card__foot">
+            <div class="chipset">
+              <span class="chip">Paseo</span>
+              <span class="chip">Río</span>
+              <span class="chip">Familiar</span>
+            </div>
+            <button class="read" type="button" data-read="malecon">Leer más</button>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card" data-cat="cultura" data-title="Museos y memoria cultural">
+          <div class="card__media">
+            <img
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1529421308261-80f5e1a0f3b9?auto=format&fit=crop&w=1400&q=70"
+              alt="Interior de museo con salas de exposición"
+            />
+            <span class="card__label">Cultura</span>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Museos y memoria cultural</h3>
+            <p class="card__desc">
+              Antes de recorrer la ciudad, una visita a espacios de exposición ayuda a entender el ritmo barranquillero:
+              migraciones, música, arte popular y transformaciones urbanas.
+            </p>
+            <ul class="card__tips">
+              <li>Consulta horarios oficiales y eventos temporales para aprovechar tu visita.</li>
+              <li>Haz una lista de “temas clave” (música, carnaval, historia) para enfocar el recorrido.</li>
+              <li>Reserva al menos 60–90 minutos por museo para una lectura calmada.</li>
+            </ul>
+          </div>
+          <div class="card__foot">
+            <div class="chipset">
+              <span class="chip">Historia</span>
+              <span class="chip">Arte</span>
+              <span class="chip">Aprendizaje</span>
+            </div>
+            <button class="read" type="button" data-read="museos">Leer más</button>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card" data-cat="gastronomia" data-title="Ruta gastronómica barranquillera">
+          <div class="card__media">
+            <img
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=1400&q=70"
+              alt="Mesa con platos variados, ideal para hablar de gastronomía"
+            />
+            <span class="card__label">Gastronomía</span>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Ruta gastronómica barranquillera</h3>
+            <p class="card__desc">
+              La cocina local es una puerta de entrada a la ciudad: sabores caribeños, mezclas tradicionales y propuestas contemporáneas.
+              La clave está en elegir una ruta: mercado, barrio o zona de restaurantes.
+            </p>
+            <ul class="card__tips">
+              <li>Empieza por porciones moderadas si quieres probar variedad.</li>
+              <li>Pregunta por ingredientes y niveles de picante para evitar sorpresas.</li>
+              <li>En temporada alta, considera horarios alternos para comer con tranquilidad.</li>
+            </ul>
+          </div>
+          <div class="card__foot">
+            <div class="chipset">
+              <span class="chip">Sabores</span>
+              <span class="chip">Barrios</span>
+              <span class="chip">Rutas</span>
+            </div>
+            <button class="read" type="button" data-read="gastro">Leer más</button>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="card" data-cat="naturaleza" data-title="Parques urbanos y descanso">
+          <div class="card__media">
+            <img
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1400&q=70"
+              alt="Sendero de parque con árboles y luz natural"
+            />
+            <span class="card__label">Naturaleza</span>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Parques urbanos y descanso</h3>
+            <p class="card__desc">
+              Cuando buscas un plan más pausado, los parques permiten respirar, leer y conversar. Funcionan bien como “bloques” entre
+              recorridos más intensos.
+            </p>
+            <ul class="card__tips">
+              <li>Lleva agua y protección solar si planeas una caminata larga.</li>
+              <li>Respeta la fauna y evita alimentar animales.</li>
+              <li>Si vas a hacer ejercicio, calienta antes y elige superficies seguras.</li>
+            </ul>
+          </div>
+          <div class="card__foot">
+            <div class="chipset">
+              <span class="chip">Aire libre</span>
+              <span class="chip">Pausa</span>
+              <span class="chip">Bienestar</span>
+            </div>
+            <button class="read" type="button" data-read="parques">Leer más</button>
+          </div>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="card" data-cat="cultura" data-title="Carnaval: símbolos y lectura cultural">
+          <div class="card__media">
+            <img
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1520975958221-334db6f1f658?auto=format&fit=crop&w=1400&q=70"
+              alt="Escena de baile y cultura festiva, útil como referencia de carnaval"
+            />
+            <span class="card__label">Cultura</span>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Carnaval: símbolos y lectura cultural</h3>
+            <p class="card__desc">
+              Más allá de la fiesta, el Carnaval es una narrativa de identidad. Entender sus símbolos y personajes
+              mejora tu experiencia: lo que ves tiene historia y significado.
+            </p>
+            <ul class="card__tips">
+              <li>Si asistes a eventos, sigue recomendaciones oficiales y respeta zonas delimitadas.</li>
+              <li>Valora el trabajo de comparsas y artistas: es patrimonio vivo.</li>
+              <li>Evita difundir información no confirmada sobre cierres o rutas.</li>
+            </ul>
+          </div>
+          <div class="card__foot">
+            <div class="chipset">
+              <span class="chip">Tradición</span>
+              <span class="chip">Identidad</span>
+              <span class="chip">Patrimonio</span>
+            </div>
+            <button class="read" type="button" data-read="carnaval">Leer más</button>
+          </div>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="card" data-cat="iconico" data-title="Miradores y fotografías con intención">
+          <div class="card__media">
+            <img
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1514924013411-cbf25faa35bb?auto=format&fit=crop&w=1400&q=70"
+              alt="Panorámica urbana al atardecer"
+            />
+            <span class="card__label">Icónico</span>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Miradores y fotografías con intención</h3>
+            <p class="card__desc">
+              Un buen mirador no es solo “la foto”. Es una forma de leer la ciudad: ríos, barrios, avenidas y contrastes.
+              Planifica tu visita según el tipo de luz y la seguridad del entorno.
+            </p>
+            <ul class="card__tips">
+              <li>Prioriza zonas con circulación y evita exponer equipos en lugares poco transitados.</li>
+              <li>Si fotografías personas, solicita permiso cuando sea apropiado.</li>
+              <li>Guarda tus respaldos y cuida tu información.</li>
+            </ul>
+          </div>
+          <div class="card__foot">
+            <div class="chipset">
+              <span class="chip">Foto</span>
+              <span class="chip">Atardecer</span>
+              <span class="chip">Panorámica</span>
+            </div>
+            <button class="read" type="button" data-read="miradores">Leer más</button>
+          </div>
+        </article>
+      </div>
+
+      <p class="fineprint" style="margin-top:12px;">
+        Créditos de imágenes: fotografías de uso editorial/stock provenientes de Unsplash (licencia y autoría disponibles en el enlace de origen de cada imagen).
+        Si deseas reemplazarlas por fotos propias, puedes cambiar las URL en el HTML.
+      </p>
+    </section>
+
+    <!-- COLECCIONES -->
+    <section id="colecciones" aria-label="Colecciones temáticas">
+      <div class="section__head">
+        <div>
+          <h2 class="h2">Colecciones temáticas para planear mejor</h2>
+          <p class="sub">
+            Recuadros editoriales con sugerencias de lectura. No reemplazan información oficial sobre horarios, cierres o acceso; sirven como guía informativa.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="card" style="min-height:unset; grid-column:span 6;">
+          <div class="card__body">
+            <h3 class="card__title">Un día en Barranquilla</h3>
+            <p class="card__desc">
+              Diseña un itinerario realista con tres bloques: mañana cultural, tarde de paseo y noche gastronómica.
+              El objetivo es disfrutar sin prisa y con margen para traslados.
+            </p>
+            <ul class="card__tips">
+              <li>Bloque 1: una visita cultural (museo o espacio patrimonial).</li>
+              <li>Bloque 2: caminata o parque para bajar el ritmo.</li>
+              <li>Bloque 3: zona gastronómica con reserva o alternativa cercana.</li>
+            </ul>
+          </div>
+          <div class="card__foot">
+            <div class="chipset">
+              <span class="chip">Planificación</span>
+              <span class="chip">Tiempo</span>
+              <span class="chip">Equilibrio</span>
+            </div>
+            <button class="read" type="button" data-read="itinerario">Ver estructura</button>
+          </div>
+        </div>
+
+        <div class="card" style="min-height:unset; grid-column:span 6;">
+          <div class="card__body">
+            <h3 class="card__title">Lectura cultural del Carnaval</h3>
+            <p class="card__desc">
+              Si visitas en temporada de Carnaval, entiende el mapa social: eventos, comparsas y espacios de encuentro.
+              La recomendación principal es priorizar seguridad, respeto y verificación de información.
+            </p>
+            <ul class="card__tips">
+              <li>Infórmate por canales oficiales y medios confiables para logística.</li>
+              <li>Hidrátate, protege tu piel y planifica puntos de encuentro.</li>
+              <li>Disfruta con respeto: el Carnaval es una expresión comunitaria.</li>
+            </ul>
+          </div>
+          <div class="card__foot">
+            <div class="chipset">
+              <span class="chip">Cultura</span>
+              <span class="chip">Contexto</span>
+              <span class="chip">Seguridad</span>
+            </div>
+            <button class="read" type="button" data-read="temporada">Consejos</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- METODO -->
+    <section id="metodo" aria-label="Metodología editorial">
+      <div class="section__head">
+        <div>
+          <h2 class="h2">Cómo seleccionamos y redactamos</h2>
+          <p class="sub">Transparencia editorial para una lectura confiable y apta para publicidad responsable.</p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <article class="card" style="grid-column:span 4; min-height:unset;">
+          <div class="card__body">
+            <h3 class="card__title">Criterios</h3>
+            <p class="card__desc">
+              Elegimos sitios por relevancia cultural, accesibilidad general, valor informativo y utilidad para distintos perfiles de lector.
+              No publicamos afirmaciones absolutas o engañosas.
+            </p>
+          </div>
+          <div class="card__foot">
+            <div class="chipset">
+              <span class="chip">Relevancia</span>
+              <span class="chip">Accesibilidad</span>
+              <span class="chip">Claridad</span>
+            </div>
+            <a class="read" href="#politicas">Ver políticas</a>
+          </div>
+        </article>
+
+        <article class="card" style="grid-column:span 4; min-height:unset;">
+          <div class="card__body">
+            <h3 class="card__title">Actualización</h3>
+            <p class="card__desc">
+              Las ciudades cambian. Señalamos que horarios y condiciones pueden variar. Recomendamos confirmar en fuentes oficiales
+              cuando sea necesario (eventos, cierres, acceso o tarifas).
+            </p>
+          </div>
+          <div class="card__foot">
+            <div class="chipset">
+              <span class="chip">Verificación</span>
+              <span class="chip">Responsabilidad</span>
+              <span class="chip">Contexto</span>
+            </div>
+            <button class="read" type="button" data-read="actualizacion">Lineamientos</button>
+          </div>
+        </article>
+
+        <article class="card" style="grid-column:span 4; min-height:unset;">
+          <div class="card__body">
+            <h3 class="card__title">Publicidad responsable</h3>
+            <p class="card__desc">
+              El contenido es informativo. No hacemos promesas de resultados, no solicitamos datos sensibles para leer y no ocultamos información
+              relevante. Priorizamos experiencia de usuario y claridad.
+            </p>
+          </div>
+          <div class="card__foot">
+            <div class="chipset">
+              <span class="chip">Transparencia</span>
+              <span class="chip">UX</span>
+              <span class="chip">Cumplimiento</span>
+            </div>
+            <a class="read" href="#politicas">Marco legal</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="preguntas" aria-label="Preguntas frecuentes">
+      <div class="section__head">
+        <div>
+          <h2 class="h2">Preguntas frecuentes</h2>
+          <p class="sub">Respuestas directas para orientar tu lectura sin saturar la página.</p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="card" style="grid-column:span 6; min-height:unset;">
+          <div class="card__body">
+            <h3 class="card__title">¿CaribeAirCol vende tours o hace reservas?</h3>
+            <p class="card__desc">
+              No. Este sitio es solo informativo. Si en el futuro se incluyeran enlaces a terceros, se indicará con claridad,
+              y siempre podrás decidir si salir o no del sitio.
+            </p>
+          </div>
+        </div>
+
+        <div class="card" style="grid-column:span 6; min-height:unset;">
+          <div class="card__body">
+            <h3 class="card__title">¿Cómo manejan privacidad y cookies?</h3>
+            <p class="card__desc">
+              Mostramos un aviso de cookies con opciones claras. No pedimos información personal para leer.
+              Puedes revisar los detalles completos en la sección de Políticas.
+            </p>
+          </div>
+        </div>
+
+        <div class="card" style="grid-column:span 6; min-height:unset;">
+          <div class="card__body">
+            <h3 class="card__title">¿Las imágenes son reales?</h3>
+            <p class="card__desc">
+              Sí, son fotografías reales de banco (Unsplash) usadas como apoyo visual. Para máxima fidelidad local, puedes reemplazarlas por fotos propias
+              o de tus colaboradores, respetando derechos de autor.
+            </p>
+          </div>
+        </div>
+
+        <div class="card" style="grid-column:span 6; min-height:unset;">
+          <div class="card__body">
+            <h3 class="card__title">¿Garantizan horarios, precios o disponibilidad?</h3>
+            <p class="card__desc">
+              No. La información es orientativa. Recomendamos confirmar detalles en canales oficiales o del establecimiento,
+              especialmente en temporada alta o durante eventos.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- POLÍTICAS -->
+    <section id="politicas" aria-label="Políticas y documentos">
+      <div class="section__head">
+        <div>
+          <h2 class="h2">Políticas, privacidad y transparencia</h2>
+          <p class="sub">
+            Texto listo para una landing informativa profesional. Ajusta con un abogado/asesor si recolectas datos o integras analítica/ads.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <article class="card" style="grid-column:span 6; min-height:unset;">
+          <div class="card__body">
+            <h3 class="card__title">Política de Privacidad</h3>
+            <p class="card__desc">
+              CaribeAirCol respeta tu privacidad. Este sitio puede operar sin que proporciones datos personales para navegar o leer contenido.
+              Si habilitas funciones opcionales (por ejemplo, analítica o formularios), se informará de forma clara antes de recolectar información.
+            </p>
+
+            <h3 style="margin:10px 0 6px; font-family:var(--serif); font-style:italic; font-size:16px;">Datos que podríamos procesar</h3>
+            <ul class="card__tips">
+              <li>Datos técnicos básicos: tipo de dispositivo, navegador, páginas visitadas (solo si activas analítica).</li>
+              <li>Datos voluntarios: información que envíes mediante formularios (si se habilitan).</li>
+              <li>No solicitamos ni requerimos datos sensibles para acceder al contenido.</li>
+            </ul>
+
+            <h3 style="margin:10px 0 6px; font-family:var(--serif); font-style:italic; font-size:16px;">Finalidades</h3>
+            <ul class="card__tips">
+              <li>Mejorar experiencia de lectura, rendimiento y estructura del sitio.</li>
+              <li>Responder solicitudes voluntarias de contacto (si se habilitan).</li>
+              <li>Cumplir obligaciones legales aplicables.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card" style="grid-column:span 6; min-height:unset;">
+          <div class="card__body">
+            <h3 class="card__title">Política de Cookies</h3>
+            <p class="card__desc">
+              Usamos cookies únicamente cuando aportan valor funcional o de medición. Puedes aceptar o rechazar cookies no esenciales en el aviso.
+              Si integras Google Ads u otras plataformas, revisa configuraciones para cumplir normativas aplicables.
+            </p>
+
+            <h3 style="margin:10px 0 6px; font-family:var(--serif); font-style:italic; font-size:16px;">Tipos de cookies</h3>
+            <ul class="card__tips">
+              <li>Necesarias: permiten funciones básicas del sitio (por ejemplo, recordar tu elección de cookies).</li>
+              <li>Preferencias: guardan configuraciones opcionales que tú elijas.</li>
+              <li>Analítica/marketing: solo si las activas explícitamente.</li>
+            </ul>
+
+            <h3 style="margin:10px 0 6px; font-family:var(--serif); font-style:italic; font-size:16px;">Control</h3>
+            <ul class="card__tips">
+              <li>Puedes cambiar tu decisión en cualquier momento desde “Preferencias de cookies”.</li>
+              <li>También puedes administrar cookies desde tu navegador.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card" style="grid-column:span 6; min-height:unset;">
+          <div class="card__body">
+            <h3 class="card__title">Términos de Uso</h3>
+            <p class="card__desc">
+              CaribeAirCol ofrece contenido informativo. Al usar el sitio aceptas que la información no constituye asesoría legal, médica o financiera,
+              y que debes verificar condiciones locales (horarios, cierres, precios, acceso) con fuentes oficiales cuando aplique.
+            </p>
+            <ul class="card__tips">
+              <li>Uso permitido: lectura personal y referencia con atribución cuando corresponda.</li>
+              <li>Uso no permitido: copiar contenido completo sin permiso o infringir derechos de terceros.</li>
+              <li>Limitación: no garantizamos exactitud absoluta debido a cambios en tiempo real.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card" style="grid-column:span 6; min-height:unset;">
+          <div class="card__body">
+            <h3 class="card__title">Transparencia editorial</h3>
+            <p class="card__desc">
+              Si se incorporan enlaces a terceros, patrocinios o monetización, se señalarán de manera visible. No ocultamos intención comercial
+              ni inducimos a engaño. La prioridad es un contenido claro y útil para el lector.
+            </p>
+            <ul class="card__tips">
+              <li>Opiniones: se redactan con criterio informativo, no como promesa de resultados.</li>
+              <li>Correcciones: si detectas un error, puedes reportarlo por el canal de contacto.</li>
+              <li>Publicidad: evitamos prácticas intrusivas y priorizamos experiencia de usuario.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" aria-label="Contacto y avisos">
+      <div class="section__head">
+        <div>
+          <h2 class="h2">Contacto</h2>
+          <p class="sub">
+            Página informativa. Si habilitas un correo o formulario real, añade tu razón social y canales oficiales.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <article class="card" style="grid-column:span 7; min-height:unset;">
+          <div class="card__body">
+            <h3 class="card__title">Canal de comunicación</h3>
+            <p class="card__desc">
+              Para reportes de corrección, sugerencias de nuevos sitios o actualizaciones editoriales, utiliza un canal verificable.
+              Evita publicar datos personales en comentarios públicos.
+            </p>
+            <div class="sep"></div>
+            <p class="card__desc"><span class="muted">Correo sugerido:</span> contacto@caribeaircol.com (reemplaza por uno real)</p>
+            <p class="card__desc"><span class="muted">Ciudad:</span> Barranquilla, Colombia</p>
+            <p class="card__desc"><span class="muted">Propósito del sitio:</span> información y divulgación cultural.</p>
+          </div>
+          <div class="card__foot">
+            <div class="chipset">
+              <span class="chip">Correcciones</span>
+              <span class="chip">Sugerencias</span>
+              <span class="chip">Transparencia</span>
+            </div>
+            <button class="read" type="button" data-read="contacto">Buenas prácticas</button>
+          </div>
+        </article>
+
+        <aside class="card" style="grid-column:span 5; min-height:unset;">
+          <div class="card__body">
+            <h3 class="card__title">Preferencias de cookies</h3>
+            <p class="card__desc">
+              Puedes abrir el panel de cookies para cambiar tu decisión. Esto guarda únicamente tu preferencia local en el navegador.
+            </p>
+          </div>
+          <div class="card__foot">
+            <div class="chipset">
+              <span class="chip">Control</span>
+              <span class="chip">Privacidad</span>
+            </div>
+            <button class="read" id="btnCookiePrefs" type="button">Abrir panel</button>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="wrap footer__grid">
+      <div class="legal">
+        <h3>CaribeAirCol</h3>
+        <p>
+          Blog informativo sobre los mejores sitios de Barranquilla. Contenido diseñado para lectura clara, estructura por recuadros y transparencia.
+          No realizamos reservas ni ventas directas desde esta landing.
+        </p>
+        <p class="fineprint">
+          Si implementas publicidad (por ejemplo, Google Ads), revisa configuraciones de consentimiento y etiquetado, y mantén coherencia entre anuncios y contenido.
+        </p>
+      </div>
+
+      <div class="legal">
+        <h3>Documentos</h3>
+        <ul>
+          <li><a href="#politicas" data-jump="politicas">Política de Privacidad</a></li>
+          <li><a href="#politicas" data-jump="politicas">Política de Cookies</a></li>
+          <li><a href="#politicas" data-jump="politicas">Términos de Uso</a></li>
+          <li><a href="#politicas" data-jump="politicas">Transparencia editorial</a></li>
+        </ul>
+        <p class="fineprint">
+          © <span id="year">2026</span> CaribeAirCol. Todos los derechos reservados (ajusta según tu modelo de licencia).
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Menú móvil (dialog) -->
+  <div class="modal" id="mobileMenu" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Menú móvil">
+    <div class="modal__box">
+      <div class="modal__top">
+        <h2 class="modal__title">Navegación</h2>
+        <button class="modal__close" type="button" data-close="menu">Cerrar</button>
+      </div>
+      <div class="modal__content">
+        <p class="muted" style="margin-top:0;">Accede rápidamente a las secciones.</p>
+        <div class="sep"></div>
+        <div class="badgebar" style="gap:10px;">
+          <a class="btn" href="#destacados" data-closeandjump>Destacados</a>
+          <a class="btn" href="#colecciones" data-closeandjump>Colecciones</a>
+          <a class="btn" href="#metodo" data-closeandjump>Metodología</a>
+          <a class="btn" href="#preguntas" data-closeandjump>Preguntas</a>
+          <a class="btn" href="#politicas" data-closeandjump>Políticas</a>
+          <a class="btn" href="#contacto" data-closeandjump>Contacto</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de lectura -->
+  <div class="modal" id="reader" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Lectura ampliada">
+    <div class="modal__box">
+      <div class="modal__top">
+        <h2 class="modal__title" id="readerTitle">Lectura</h2>
+        <button class="modal__close" type="button" data-close="reader">Cerrar</button>
+      </div>
+      <div class="modal__content" id="readerContent"></div>
+    </div>
+  </div>
+
+  <!-- Banner de cookies -->
+  <div class="cookie" id="cookieBanner" role="region" aria-label="Aviso de cookies">
+    <div class="cookie__box">
+      <p class="cookie__text">
+        Este sitio usa cookies necesarias para recordar tu preferencia. Cookies no esenciales (analítica/marketing) solo se activarán si las aceptas.
+        Puedes cambiar tu elección cuando quieras.
+      </p>
+      <div class="cookie__actions">
+        <button class="btn btn--ghost" id="cookieReject" type="button">Rechazar no esenciales</button>
+        <button class="btn" id="cookiePrefs" type="button">Preferencias</button>
+        <button class="btn btn--primary" id="cookieAccept" type="button">Aceptar</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      const $ = (sel, root=document) => root.querySelector(sel);
+      const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
+
+      // Fechas y footer
+      const now = new Date();
+      $("#year").textContent = String(now.getFullYear());
+      $("#lastUpdated").textContent = now.toLocaleDateString("es-CO", { year:"numeric", month:"long", day:"numeric" });
+
+      // Scroll suave
+      const scrollToId = (id) => {
+        const el = document.getElementById(id);
+        if(!el) return;
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      };
+
+      $("#btnScrollTop")?.addEventListener("click", () => scrollToId("inicio"));
+      $("#btnScrollTop2")?.addEventListener("click", () => scrollToId("inicio"));
+
+      // Menú móvil
+      const mobileMenu = $("#mobileMenu");
+      const openMenu = () => { mobileMenu.setAttribute("aria-hidden","false"); trapFocus(mobileMenu); };
+      const closeMenu = () => { mobileMenu.setAttribute("aria-hidden","true"); releaseFocus(); };
+
+      $("#btnMenu")?.addEventListener("click", openMenu);
+      $("#btnMenu2")?.addEventListener("click", openMenu);
+      $$("[data-close='menu']").forEach(b => b.addEventListener("click", closeMenu));
+
+      $$("[data-closeandjump]").forEach(a => {
+        a.addEventListener("click", (e) => {
+          e.preventDefault();
+          const href = a.getAttribute("href") || "#inicio";
+          closeMenu();
+          const id = href.replace("#","");
+          setTimeout(() => scrollToId(id), 0);
+        });
+      });
+
+      // Filtros de cards
+      const q = $("#q");
+      const cat = $("#cat");
+      const cardsWrap = $("#cards");
+
+      const applyFilters = () => {
+        const term = (q.value || "").trim().toLowerCase();
+        const c = (cat.value || "todas").toLowerCase();
+
+        $$(".card", cardsWrap).forEach(card => {
+          const title = (card.dataset.title || "").toLowerCase();
+          const cc = (card.dataset.cat || "").toLowerCase();
+          const matchesTerm = !term || title.includes(term);
+          const matchesCat = (c === "todas") || (cc === c);
+          card.style.display = (matchesTerm && matchesCat) ? "" : "none";
+        });
+      };
+
+      q?.addEventListener("input", applyFilters);
+      cat?.addEventListener("change", applyFilters);
+
+      // Modal lector
+      const reader = $("#reader");
+      const readerTitle = $("#readerTitle");
+      const readerContent = $("#readerContent");
+
+      const openReader = (key) => {
+        const payload = READS[key] || READS["default"];
+        readerTitle.textContent = payload.title;
+        readerContent.innerHTML = payload.html;
+        reader.setAttribute("aria-hidden","false");
+        trapFocus(reader);
+      };
+      const closeReader = () => {
+        reader.setAttribute("aria-hidden","true");
+        releaseFocus();
+      };
+
+      $$("button[data-read]").forEach(btn => {
+        btn.addEventListener("click", () => openReader(btn.dataset.read));
+      });
+
+      $("#btnAbrirGuia")?.addEventListener("click", () => openReader("guia"));
+      $$("[data-close='reader']").forEach(b => b.addEventListener("click", closeReader));
+
+      // Cerrar modales con Escape y click fuera
+      const closeIfBackdrop = (modal, closeFn) => {
+        modal.addEventListener("click", (e) => {
+          if(e.target === modal) closeFn();
+        });
+      };
+      closeIfBackdrop(reader, closeReader);
+      closeIfBackdrop(mobileMenu, closeMenu);
+
+      document.addEventListener("keydown", (e) => {
+        if(e.key === "Escape"){
+          if(reader.getAttribute("aria-hidden") === "false") closeReader();
+          if(mobileMenu.getAttribute("aria-hidden") === "false") closeMenu();
+        }
+      });
+
+      // Cookies (simple, apto para landing)
+      const cookieBanner = $("#cookieBanner");
+      const cookieKey = "caribeaircol_cookie_choice";
+
+      const showCookieBannerIfNeeded = () => {
+        const saved = localStorage.getItem(cookieKey);
+        if(!saved){
+          cookieBanner.style.display = "block";
+        }
+      };
+
+      const setCookieChoice = (choice) => {
+        localStorage.setItem(cookieKey, choice);
+        cookieBanner.style.display = "none";
+      };
+
+      $("#cookieAccept")?.addEventListener("click", () => setCookieChoice("accept"));
+      $("#cookieReject")?.addEventListener("click", () => setCookieChoice("reject"));
+      $("#cookiePrefs")?.addEventListener("click", () => openReader("cookies"));
+      $("#btnCookiePrefs")?.addEventListener("click", () => openReader("cookies"));
+
+      showCookieBannerIfNeeded();
+
+      // Accesibilidad: focus trap para modales
+      let lastFocus = null;
+
+      function trapFocus(modal){
+        lastFocus = document.activeElement;
+        const focusables = getFocusable(modal);
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+
+        if(first) first.focus();
+
+        modal.addEventListener("keydown", handleTab);
+
+        function handleTab(e){
+          if(e.key !== "Tab") return;
+          const f = getFocusable(modal);
+          if(!f.length) return;
+
+          const firstEl = f[0];
+          const lastEl = f[f.length - 1];
+
+          if(e.shiftKey && document.activeElement === firstEl){
+            e.preventDefault();
+            lastEl.focus();
+          } else if(!e.shiftKey && document.activeElement === lastEl){
+            e.preventDefault();
+            firstEl.focus();
+          }
+        }
+
+        modal.__handleTab = handleTab;
+      }
+
+      function releaseFocus(){
+        // Remove handlers
+        [reader, mobileMenu].forEach(m => {
+          if(m?.__handleTab){
+            m.removeEventListener("keydown", m.__handleTab);
+            m.__handleTab = null;
+          }
+        });
+        if(lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();
+        lastFocus = null;
+      }
+
+      function getFocusable(root){
+        const sel = [
+          "a[href]",
+          "button:not([disabled])",
+          "input:not([disabled])",
+          "select:not([disabled])",
+          "textarea:not([disabled])",
+          "[tabindex]:not([tabindex='-1'])"
+        ].join(",");
+        return $$(sel, root).filter(el => el.offsetParent !== null);
+      }
+
+      // Contenido extendido (solo informativo)
+      const READS = {
+        guia: {
+          title: "Guía rápida: cómo leer Barranquilla en un día",
+          html: `
+            <p>
+              Barranquilla se entiende mejor cuando alternas espacios de historia, paseo y mesa. Esta guía propone una lectura por capas,
+              no una lista cerrada. Ajusta según tus intereses y condiciones del día.
+            </p>
+            <h3>Bloque 1: contexto</h3>
+            <p>
+              Inicia por un espacio cultural para situarte: tradiciones, influencias, música y memoria urbana. Anota dos o tres ideas:
+              un ritmo, un personaje, una fecha, una imagen. Eso te acompañará el resto del recorrido.
+            </p>
+            <h3>Bloque 2: ciudad caminable</h3>
+            <p>
+              Elige un paseo amplio (malecón, parque, corredor urbano). La recomendación es caminar por tramos y descansar. Observa:
+              cómo se mueven las personas, qué se celebra, qué se conversa. Esa es la ciudad viva.
+            </p>
+            <h3>Bloque 3: gastronomía con intención</h3>
+            <p>
+              Cierra con una ruta gastronómica. Pregunta por ingredientes y porciones. Si buscas variedad, prueba en pequeñas cantidades
+              y guarda una opción “plan B” por si hay filas.
+            </p>
+            <p class="muted">
+              Nota: confirma horarios y condiciones si planeas asistir a eventos o espacios con entradas. Esta guía es solo informativa.
+            </p>
+          `
+        },
+        malecon: {
+          title: "Gran Malecón del Río: recomendaciones prácticas",
+          html: `
+            <p>
+              El malecón es un espacio ideal para caminar y hacer pausas. En una primera visita, evita querer verlo todo de una sola vez:
+              selecciona un tramo y disfrútalo completo.
+            </p>
+            <h3>Consejo de lectura urbana</h3>
+            <p>
+              Observa la relación ciudad–río: cómo se organizan los espacios, dónde se concentran las actividades y cómo cambia el ambiente
+              entre tarde y noche. Eso te dará una impresión clara del carácter ribereño.
+            </p>
+            <h3>Buenas prácticas</h3>
+            <ul>
+              <li>Hidrátate y protégete del sol.</li>
+              <li>Evita distracciones con el celular en zonas concurridas.</li>
+              <li>Si vas con niños, establece un punto de encuentro.</li>
+            </ul>
+          `
+        },
+        museos: {
+          title: "Museos: cómo aprovechar una visita informativa",
+          html: `
+            <p>
+              Un museo funciona mejor si llevas una pregunta: ¿qué quiero entender de Barranquilla hoy? Puede ser historia, arte popular,
+              migraciones o música. Con esa brújula, la visita se vuelve más significativa.
+            </p>
+            <h3>Antes de ir</h3>
+            <ul>
+              <li>Revisa horarios y programación en canales oficiales.</li>
+              <li>Define un tiempo mínimo de recorrido para evitar ir “a la carrera”.</li>
+              <li>Si hay exposiciones temporales, prioriza las que conectan con tu interés.</li>
+            </ul>
+          `
+        },
+        gastro: {
+          title: "Ruta gastronómica: plan sin exageraciones",
+          html: `
+            <p>
+              La mejor ruta es la que te deja energía para seguir explorando. Prioriza calidad y variedad por encima de cantidad.
+              La cocina caribeña se disfruta con calma.
+            </p>
+            <h3>Estrategia recomendada</h3>
+            <ul>
+              <li>Prueba porciones pequeñas y comparte si vas acompañado.</li>
+              <li>Pregunta por ingredientes y métodos de preparación.</li>
+              <li>Considera tiempos de espera en temporada alta.</li>
+            </ul>
+          `
+        },
+        parques: {
+          title: "Parques urbanos: pausa y ritmo",
+          html: `
+            <p>
+              Los parques permiten equilibrar el día: bajar revoluciones, observar y descansar. Son una herramienta para evitar el cansancio
+              de itinerarios demasiado llenos.
+            </p>
+            <h3>Recomendaciones</h3>
+            <ul>
+              <li>Lleva agua y evita horas de sol fuerte si planeas caminar.</li>
+              <li>Respeta el entorno: no dejes residuos.</li>
+              <li>Si haces ejercicio, elige rutas seguras y visibles.</li>
+            </ul>
+          `
+        },
+        carnaval: {
+          title: "Carnaval: lectura cultural y respeto",
+          html: `
+            <p>
+              El Carnaval es una expresión colectiva. Más que una agenda, es un lenguaje: música, vestuario, personajes y memoria.
+              La mejor experiencia nace del respeto por el trabajo artístico y la organización comunitaria.
+            </p>
+            <h3>Claves para el visitante</h3>
+            <ul>
+              <li>Confirma información logística por canales oficiales.</li>
+              <li>Cuida tus pertenencias y planifica puntos de encuentro.</li>
+              <li>Evita difundir rumores de cierres, rutas o incidentes sin verificación.</li>
+            </ul>
+          `
+        },
+        miradores: {
+          title: "Miradores y fotografía: enfoque responsable",
+          html: `
+            <p>
+              Un mirador ayuda a entender la ciudad desde arriba: barrios, avenidas y el río. Fotografía con intención y sin invadir
+              la privacidad de otros.
+            </p>
+            <h3>Buenas prácticas</h3>
+            <ul>
+              <li>Evita mostrar información personal (placas, rostros) sin necesidad.</li>
+              <li>Cuida tus equipos y prioriza zonas con movimiento.</li>
+              <li>Respalda tus archivos y mantén tus dispositivos seguros.</li>
+            </ul>
+          `
+        },
+        itinerario: {
+          title: "Estructura sugerida: itinerario de 1 día",
+          html: `
+            <p>
+              Esta es una estructura flexible para construir tu propio día. No es una promesa de tiempos exactos: ajusta según clima,
+              movilidad y horarios del lugar.
+            </p>
+            <h3>Mañana</h3>
+            <ul>
+              <li>Visita cultural (museo o espacio patrimonial).</li>
+              <li>Traslado corto y pausa para café/agua.</li>
+            </ul>
+            <h3>Tarde</h3>
+            <ul>
+              <li>Paseo (malecón o parque) por tramos.</li>
+              <li>Tiempo libre para fotos o descanso.</li>
+            </ul>
+            <h3>Noche</h3>
+            <ul>
+              <li>Ruta gastronómica o zona de restaurantes.</li>
+              <li>Plan alterno si hay espera o aforo.</li>
+            </ul>
+          `
+        },
+        temporada: {
+          title: "Temporada alta y Carnaval: recomendaciones informativas",
+          html: `
+            <p>
+              En temporada alta, la logística cambia: más filas, más eventos, más movimiento. La regla base es simple: verifica información,
+              planifica puntos de encuentro y cuida tu bienestar.
+            </p>
+            <h3>Checklist</h3>
+            <ul>
+              <li>Horarios y ubicaciones: verifica en fuentes oficiales.</li>
+              <li>Movilidad: calcula tiempo extra.</li>
+              <li>Bienestar: hidratación, protección solar, descanso.</li>
+            </ul>
+          `
+        },
+        actualizacion: {
+          title: "Actualización editorial: cómo mantenemos el contenido",
+          html: `
+            <p>
+              CaribeAirCol busca precisión, pero reconoce que la información puede cambiar. Por eso:
+            </p>
+            <ul>
+              <li>Indicamos que horarios y condiciones deben confirmarse cuando sea necesario.</li>
+              <li>Preferimos descripciones atemporales (qué es, por qué importa, cómo se vive) sobre datos volátiles.</li>
+              <li>Si recibimos reportes de corrección, evaluamos y actualizamos.</li>
+            </ul>
+            <p class="muted">
+              Si integras formularios o analítica, actualiza estas políticas para reflejar exactamente qué datos recolectas y con qué fin.
+            </p>
+          `
+        },
+        cookies: {
+          title: "Preferencias de cookies",
+          html: `
+            <p>
+              En esta demo, tu elección se guarda localmente en el navegador (localStorage) para no volver a mostrar el aviso.
+              No se activan cookies de analítica/marketing de forma automática.
+            </p>
+            <h3>Opciones</h3>
+            <ul>
+              <li><strong>Aceptar</strong>: habilitaría cookies no esenciales si las implementas en el futuro.</li>
+              <li><strong>Rechazar no esenciales</strong>: mantiene solo lo estrictamente necesario.</li>
+            </ul>
+            <h3>Recomendación para Google Ads</h3>
+            <p>
+              Si incorporas etiquetas o medición, aplica un sistema de consentimiento antes de disparar scripts no esenciales,
+              y describe con precisión proveedores y finalidades en tu política.
+            </p>
+          `
+        },
+        contacto: {
+          title: "Buenas prácticas de contacto",
+          html: `
+            <p>
+              Para un sitio informativo profesional, el contacto debe ser claro y verificable:
+            </p>
+            <ul>
+              <li>Incluye un correo real y, si aplica, razón social y país.</li>
+              <li>Responde solicitudes de corrección de manera trazable.</li>
+              <li>No solicites datos innecesarios; limita el formulario a lo mínimo.</li>
+            </ul>
+          `
+        },
+        default: {
+          title: "Lectura",
+          html: `<p>Contenido ampliado.</p>`
+        }
+      };
+
+      // Links de footer para salto
+      $$("[data-jump]").forEach(a => {
+        a.addEventListener("click", (e) => {
+          e.preventDefault();
+          scrollToId(a.getAttribute("data-jump"));
+        });
+      });
+
+    })();
+  </script>
+</body>
+</html>
