@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="es-CO">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="CaribeAirCol: blog editorial independiente sobre cultura y sitios de interés en Barranquilla. Guías locales y recomendaciones claras." />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#5b2cff" />
+  <title>CaribeAirCol | Guía Editorial de Barranquilla</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --c-purple: #5b2cff; --c-fuchsia: #e100ff; --c-yellow: #ffd400; --c-cyan: #00c2ff; --c-red: #ff2d2d;
+      --bg: #0b0c10; --panel: #10121a; --text: #e9ecf5; --muted: #b7bfd6; --line: rgba(255,255,255,.10);
+      --radius: 18px; --radius2: 22px; --max: 1180px;
+      --serif: "Playfair Display", serif; --sans: "Inter", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: var(--sans); background: var(--bg); color: var(--text);
+      line-height: 1.5; overflow-x: hidden;
+    }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    
+    /* Header */
+    header {
+      position: sticky; top: 0; z-index: 50; backdrop-filter: blur(14px);
+      background: rgba(11,12,16,.85); border-bottom: 1px solid var(--line); padding: 15px 0;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; }
+    .mark { 
+      width: 35px; height: 35px; border-radius: 10px; 
+      background: conic-gradient(from 210deg, var(--c-purple), var(--c-fuchsia), var(--c-yellow), var(--c-cyan), var(--c-red), var(--c-purple));
+    }
+    .brand__name { font-family: var(--serif); font-style: italic; font-weight: 700; font-size: 20px; }
+
+    /* Hero */
+    .hero { padding: 60px 0 40px; text-align: center; }
+    h1 { font-family: var(--serif); font-size: clamp(32px, 5vw, 48px); font-style: italic; margin-bottom: 20px; }
+    .hero p { max-width: 800px; margin: 0 auto 30px; color: var(--muted); font-size: 18px; }
+
+    /* Grilla de Contenido */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 20px 0; }
+    .card { 
+      background: var(--panel); border: 1px solid rgba(255,255,255,.12); border-radius: var(--radius); 
+      padding: 25px; transition: transform 0.2s ease;
+    }
+    .card:hover { transform: translateY(-5px); border-color: var(--c-purple); }
+    .card h3 { font-family: var(--serif); font-style: italic; font-size: 22px; margin-top: 0; }
+    
+    /* Footer & Datos Fiscales (VITAL PARA GOOGLE) */
+    footer { 
+      background: #07080a; padding: 60px 0 40px; border-top: 1px solid var(--line); margin-top: 60px;
+    }
+    .footer__grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; }
+    .legal-card { background: rgba(255,255,255,0.02); padding: 30px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05); }
+    .fiscal-info { font-size: 14px; line-height: 1.8; color: var(--muted); }
+    .fiscal-info strong { color: #fff; }
+
+    @media (max-width: 768px) {
+      .footer__grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="/">
+      <div class="mark"></div>
+      <div class="brand__name">CaribeAirCol</div>
+    </a>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>Explora Barranquilla con Criterio Editorial</h1>
+    <p>Blog independiente dedicado a la cultura, gastronomía y patrimonio local. Nuestra misión es brindar información clara y honesta para guiar tu experiencia en la ciudad.</p>
+  </section>
+
+  <section class="grid">
+    <article class="card">
+      <h3>Cultura Local</h3>
+      <p>Entendemos el Carnaval y las expresiones artísticas desde su raíz histórica y social.</p>
+    </article>
+    <article class="card">
+      <h3>Rutas Urbanas</h3>
+      <p>Guías prácticas del Gran Malecón y parques emblemáticos para un recorrido seguro y enriquecedor.</p>
+    </article>
+    <article class="card">
+      <h3>Gastronomía Caribe</h3>
+      <p>Descripciones directas de los sabores que definen a la Puerta de Oro, sin intereses comerciales ocultos.</p>
+    </article>
+  </section>
+
+  <section style="background: rgba(91,44,255,0.05); padding: 40px; border-radius: var(--radius); margin: 40px 0;">
+    <h2 style="font-family: var(--serif); font-style: italic;">Transparencia de nuestro servicio</h2>
+    <p>CaribeAirCol es un sitio web <strong>únicamente informativo</strong>. No realizamos ventas directas, no gestionamos reservas turísticas ni solicitamos pagos a los usuarios. Nuestro modelo es puramente editorial y de divulgación cultural.</p>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer__grid">
+      <div class="legal-card">
+        <h4 style="margin-top:0; font-family:var(--serif); font-size:20px; font-style:italic;">Información del Responsable Legal</h4>
+        <div class="fiscal-info">
+          <strong>Titular:</strong> HAROLD NIÑO ALVARES<br>
+          <strong>Estado Fiscal:</strong> Persona Natural / Estado Fiscal: Personal<br>
+          <strong>Dirección Verificable:</strong> Cl. 7a #56-136, Cali, Valle del Cauca, 760033, Colombia<br>
+          <strong>Email de contacto:</strong> contacto@caribeaircol.com<br>
+          <strong>Propósito del sitio:</strong> Difusión de contenidos informativos y culturales sobre Barranquilla.
+        </div>
+      </div>
+      
+      <div class="legal-card" style="display: flex; flex-direction: column; gap: 15px;">
+        <h4 style="margin-top:0; font-family:var(--serif); font-size:20px; font-style:italic;">Documentación</h4>
+        <nav style="display: flex; flex-direction: column; gap: 10px;">
+          <a href="#" style="color: var(--muted); text-decoration: none;">Política de Privacidad</a>
+          <a href="#" style="color: var(--muted); text-decoration: none;">Términos de Servicio</a>
+          <a href="#" style="color: var(--muted); text-decoration: none;">Política de Cookies</a>
+        </nav>
+        <p style="font-size: 12px; color: #444; margin-top: auto;">
+          © 2026 CaribeAirCol. Todos los derechos reservados.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
